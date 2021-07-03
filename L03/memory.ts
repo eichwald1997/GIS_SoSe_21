@@ -111,7 +111,7 @@ namespace L02b {
             tempImg.setAttribute("src", customArray1[zufallBlock1]);
             tempImg.classList.add("back", tempSize.toString());
             tempImg.setAttribute("name", customArray1[zufallBlock1]);
-            tempImg.setAttribute("id", customArray1[zufallBlock1]);     //Grund wird unten genannt
+            tempImg.setAttribute("id", customArray1[zufallBlock1]);     
             document.getElementById("box")?.appendChild(tempDiv);
             customArray1.splice(zufallBlock1, 1);
 
@@ -122,7 +122,7 @@ namespace L02b {
             tempImg2.setAttribute("src", customArray2[zufallBlock2]);
             tempImg2.classList.add("back", tempSize.toString());
             tempImg2.setAttribute("name", customArray2[zufallBlock2]);
-            tempImg2.setAttribute("id", customArray2[zufallBlock2]);    //Grund wird unten genannt
+            tempImg2.setAttribute("id", customArray2[zufallBlock2]);    
             document.getElementById("box")?.appendChild(tempDiv2);
             customArray2.splice(zufallBlock2, 1);
         }
@@ -142,15 +142,15 @@ namespace L02b {
     }
     
     function Frontclass(_event: Event): void {
-    let elem: HTMLElement = <HTMLElement>_event.target; //Hat mir später ne Menge Schwirigkeiten bereitet...
+    let elem: HTMLElement = <HTMLElement>_event.target;
     if (activeCards.length < 2) {
     elem.classList.remove("back");
     elem.classList.add("front");
     elem.removeEventListener("click", Frontclass);
     let nameOf: string = String(elem.getAttribute("name"));
     activeCardsName.push(nameOf);
-    activeCards.push(elem);         //Schwierigkeiten: Konnte den Einträge des Arrays in keine sinnvollen Namen geben, 
-    }                               // Array vom Typ HTMLElement konnte weder class noch name zugeordnet werden
+    activeCards.push(elem);          
+    }                               // Array vom Typ HTMLElement konnte weder class noch name zugeordnet werden, deswegen activeCardsName
     console.log(activeCards);
     console.log(activeCardsName);
     
@@ -172,8 +172,8 @@ namespace L02b {
     }
     
 
-    function removeElement1(): void {                           //Dadurch ist das entstanden... nicht schön aber auch nicht gewollt.
-        if (activeCardsName[0] == activeCardsName[1]) {           //Habe keine richtige Lösung gefunden, Id war das einzige was funktioniert hat.
+    function removeElement1(): void {                           
+        if (activeCardsName[0] == activeCardsName[1]) {           
                                                                 
             let rem1: NodeListOf<HTMLElement> = document.getElementsByName(activeCardsName[0]);
             console.log(rem1);
