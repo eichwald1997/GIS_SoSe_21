@@ -17,23 +17,23 @@
     margin-top: 6px;
     margin-left: 6px;
     float: left;
-    background-image: url('Rückseite.jpeg');
+    background-image: url('../img/Rückseite.jpeg');
 }
 
 .FrontBlack {
-    background-image: url('Black.jpeg');
+    background-image: url('../img/Black.jpeg');
 }
 
 .FrontWhite {
-    background-image: url('White.jpg');
+    background-image: url('../img/White.jpg');
 }
 
 .FrontBlue {
-    background-image: url('Blau.jpg');
+    background-image: url('../img/Blau.jpg');
 }
 
 .FrontRed {
-    background-image: url('Rot.jpg');
+    background-image: url('../img/Rot.jpg');
 }
 
 .divboxBack {
@@ -74,7 +74,7 @@ form {
     width: 50%;
     border: 3px solid green;
     padding: 30px;
-    background-image: url('/L03/frontend/img/background.jpg');
+    background-image: url('../img/background.jpg');
     
 }
 

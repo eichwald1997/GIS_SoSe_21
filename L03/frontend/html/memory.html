@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <title>Image Memory</title>
-<link rel="stylesheet" href="/L03/frontend/css/memory.css">
-<script src="/L03/frontend/scripts/memory.js" async></script>
+<link rel="stylesheet" href="../css/memory.css">
+<script src="../scripts/memory.js" async></script>
 </head>
 <body>
     <h1 id="title">Image Memory</h1>
@@ -14,7 +14,7 @@
             <fieldset>
                 <legend>Kartenpaare</legend>
                 <input type="number" id="kartenpaare" name="Kartenpaare" min="1" max="15" value="1">
-                (1-15 möglich!)
+                <span id="gameinfo">(8-<span id="maxPairsSpan"></span> möglich!)</span>
             </fieldset>
 
             <fieldset>
@@ -59,7 +59,7 @@
 
         <div id="tester">
             <p class="previewText" id="preText" >Preview:</p>
-            <img src="tester.jpeg" class="preview" id="pre" alt="">
+            <img src="../img/tester.jpeg" class="preview" id="pre" alt="">
         </div> 
 
         <button id="start">Start</button>

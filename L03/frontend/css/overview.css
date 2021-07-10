@@ -1,0 +1,41 @@
+.text {
+    font-family: fantasy;
+}
+
+h1, h2 {
+    text-align: center;
+    color: white;
+}
+h1 {
+    font-size: 50px;
+    text-decoration: underline;
+}
+
+body {
+    background-color: black;
+}
+
+#button {
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 220px;
+}
+
+.btt {
+    float: left;
+    width: 220px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: 100px;
+    background-color: black;
+    border: 5px solid orangered;
+    border-radius: 10px;
+    
+}
+
+a {
+    font-family: fantasy;
+    font-size: 30px;
+    color: white;
+}

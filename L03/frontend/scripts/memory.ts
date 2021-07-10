@@ -1,5 +1,5 @@
 namespace L02b {
-
+    const url = "http://localhost:8000";
     
 /** ---------------- GLOBALE VARIABLEN -------------------------------------------- */
 
@@ -16,6 +16,9 @@ namespace L02b {
     let preview: HTMLImageElement = <HTMLImageElement>document.getElementById("pre");                       //previwe Image
     let previewText: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("preText");       //previwe Text
     let previewDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("tester");
+    let maxPairsSpan: HTMLSpanElement = <HTMLSpanElement>document.getElementById("maxPairsSpan");
+    let gameInfoSpan: HTMLSpanElement = <HTMLSpanElement>document.getElementById("gameinfo");
+    let startBtn: HTMLButtonElement = <HTMLButtonElement>document.getElementById("start");
     
     
     let tempSize: String = "";                                  //Zwischenspeicher für Kartengrößen
@@ -24,8 +27,25 @@ namespace L02b {
     let activeCards: HTMLElement [] = [];                       //Array Zwischenspeicher zum Abfragen der Karten
     let activeCardsName: string [] = [];
     let doneCards: HTMLElement [] = [];                         //Wichtig für function congrats() Speicherort für alert
-
-
+    let allowedImages: string[] = [];
+   
+    async function init(){
+        let response = await fetch(url+"/getAllowedImages").then((res) => res.json());
+        if(response.success && response.images){
+            for(let img of response.images){
+                allowedImages.push(img.source);
+            }
+            if(allowedImages.length >= 8){
+                maxPairsSpan.innerText = allowedImages.length.toString();
+            }
+            else{
+                gameInfoSpan.innerText = "Du musst mindestens 8 Kartenpaare ausgewählt haben, vorher kannst du nicht starten!";
+                startBtn.disabled = true;
+            }
+            
+        }
+    }
+    init();
 
     function handlechange(_event: Event): void {
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
@@ -42,7 +62,7 @@ namespace L02b {
         if (Number(size.value) == 0) {
                 tempSize = "small";
                 preview.style.width = "100px";
-                preview.style.height = "100px";
+                preview.style.height = "100px"; 
             } else if (Number(size.value) == 4) {
                 tempSize = "big";
                 preview.style.width = "200px";
@@ -56,18 +76,18 @@ namespace L02b {
         if (target.type == "select-one") {
             if (target.value == "black") {
                 tempColor = "FrontBlack";
-                preview.src = "Black.jpeg";
+                preview.src = "../img/Black.jpeg";
             } else if (target.value == "white") {
                 tempColor = "FrontWhite";
-                preview.src = "White.jpg";
+                preview.src = "../img/White.jpg";
             } else if (target.value == "blue") {
                 tempColor = "FrontBlue";
-                preview.src = "Blau.jpg";
+                preview.src = "../img/Blau.jpg";
             } else if (target.value == "red") {
                 tempColor = "FrontRed";
-                preview.src = "Rot.jpg";
+                preview.src = "../img/Rot.jpg";
             } else if (target.value == "wählen") {
-                preview.src = "tester.jpeg";
+                preview.src = "../img/tester.jpeg";
             }
         }
          
@@ -87,11 +107,10 @@ namespace L02b {
 
     
     function handleLoad(): void {
+
     //alle Karten
-    let memoryArray1: string[] = ["pics/Bird.jpg", "pics/Book.jpg", "pics/Book2.jpg", "pics/Camera.jpg", "pics/Clothes.jpg", "pics/Cola.jpg", "pics/Food.jpg", 
-    "pics/Food2.jpg", "pics/Lemon.jpg", "pics/Night.jpg", "pics/Night2.jpg", "pics/Paint.jpg", "pics/Space.jpg", "pics/Street.jpg", "pics/Thankyou.jpg"];
-    let memoryArray2: string[] = ["pics/Bird.jpg", "pics/Book.jpg", "pics/Book2.jpg", "pics/Camera.jpg", "pics/Clothes.jpg", "pics/Cola.jpg", "pics/Food.jpg", 
-    "pics/Food2.jpg", "pics/Lemon.jpg", "pics/Night.jpg", "pics/Night2.jpg", "pics/Paint.jpg", "pics/Space.jpg", "pics/Street.jpg", "pics/Thankyou.jpg"];
+    let memoryArray1: string[] = [...allowedImages]; //takes array and copies it
+    let memoryArray2: string[] = [...allowedImages];
     //benutzerdefinierte Auswahl
     let customArray1: string[] = memoryArray1.slice(0, cardNr);
     console.log(customArray1.length);
@@ -196,7 +215,9 @@ namespace L02b {
         }
 
         if (doneCards.length == cardNr * 2) {
+            localStorage.setItem("score", zeit.toString());
             alert("You won! Your time was: " + zeit + " sec");
+            window.location.assign("score.html");
         }
 
     

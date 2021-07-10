@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Highscore</title>
+    <link rel="stylesheet" href="../css/score.css">
+    <script src="../scripts/score.js"></script>
+</head>
+<body>
+    <form id="scoreForm">
+        <h1>Your Score:</h1>
+        <h2 id="scoreElement"></h2>
+        <p>Nickname:
+            <input type="text" name="user" placeholder="Username eingeben">
+            <button type="submit">Submit!</button>
+        </p>
+    </form>
+    <table>
+         <tr>
+            <th>Pos:</th>
+            <th>Name:</th>
+            <th>Zeit</th>
+        </tr>
+        <tbody id="scoreBody"></tbody>
+
+    </table>
+
+    <button><a href="overview.html">Zur Übersicht!</a></button>
+    <button><a href="memory.html">nochmal spielen</a></button>
+
+</body>
+</html>
