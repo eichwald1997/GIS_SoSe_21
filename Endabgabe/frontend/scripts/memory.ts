@@ -1,5 +1,5 @@
 namespace L02b {
-    const url = "http://localhost:8000";
+    const url = "https://marysose2020.herokuapp.com";
     
 /** ---------------- GLOBALE VARIABLEN -------------------------------------------- */
 
@@ -103,13 +103,21 @@ namespace L02b {
         feld.innerHTML = "";
         handleLoad();
     } 
+
+    let arr = ["Orange", "Apfel"];
+    let arr2 = arr;
+    console.log(arr2); //<- ["Orange", "Apfel"];
+    arr2[0] = "Birne";
+    console.log(arr2);//<- ["Birne", "Apfel"];
+    console.log(arr); //<- ["Birne", "Apfel"]; :(
+
     
 
     
     function handleLoad(): void {
 
     //alle Karten
-    let memoryArray1: string[] = [...allowedImages]; //takes array and copies it
+    let memoryArray1: string[] = [...allowedImages]; //takes array and copies it, array-spread operator javascript
     let memoryArray2: string[] = [...allowedImages];
     //benutzerdefinierte Auswahl
     let customArray1: string[] = memoryArray1.slice(0, cardNr);

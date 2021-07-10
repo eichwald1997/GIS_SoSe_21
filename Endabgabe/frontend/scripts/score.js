@@ -1,5 +1,5 @@
 "use strict";
-const url = "http://localhost:8000";
+const url = "https://marysose2020.herokuapp.com";
 document.addEventListener("DOMContentLoaded", async () => {
     const tbody = document.getElementById("scoreBody");
     const scoreElement = document.getElementById("scoreElement");

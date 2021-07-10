@@ -1,4 +1,4 @@
-const url = "http://localhost:8000";
+const url = "https://marysose2020.herokuapp.com";
 
 document.addEventListener("DOMContentLoaded", async() =>{
     const imagesDiv = document.getElementById("images") as HTMLDivElement;

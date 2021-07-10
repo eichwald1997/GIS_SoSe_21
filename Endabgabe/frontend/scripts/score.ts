@@ -1,4 +1,4 @@
-const url = "http://localhost:8000";
+const url = "https://marysose2020.herokuapp.com";
 
 document.addEventListener("DOMContentLoaded", async() =>{
     const tbody = document.getElementById("scoreBody") as HTMLTableSectionElement;
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async() =>{
     const scoreForm = document.getElementById("scoreForm") as HTMLFormElement;
 
     scoreForm.addEventListener("submit", submitScore);
-    let score =localStorage.getItem("score");
+    let score = localStorage.getItem("score");
     if(score){
         scoreElement.innerText = score;
     }
