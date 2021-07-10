@@ -1,0 +1,20 @@
+{
+  "name": "GIS_SoSe_21",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node L03/server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eichwald1997/GIS_SoSe_21.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eichwald1997/GIS_SoSe_21/issues"
+  },
+  "homepage": "https://github.com/eichwald1997/GIS_SoSe_21#readme"
+}
