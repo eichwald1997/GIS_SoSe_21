@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (response.success && response.images) {
         for (let image of response.images) {
             let div = document.createElement("div");
+            div.setAttribute("class", "pics");
             let img = document.createElement("img");
             let checkbox = document.createElement("input");
             checkbox.value = image.source;

@@ -1,0 +1,60 @@
+
+#updateImageForm {
+    width: 80%;
+    height: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+#images {
+    width: 100%;
+    height: 400px;
+}
+
+.pics {
+    float: left;
+    margin-top: 5px;
+    margin-right: 35px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border: 4px solid darkgreen;
+}
+
+input[type=checkbox] {
+    margin-left: -30px;
+    width: 30px;
+    height: 30px;
+}
+
+h1 {
+    font-family: fantasy;
+    text-align: center;
+    font-size: 50px;
+    text-decoration: underline;
+}
+
+button[type=submit] {
+    margin-top: 30px;
+    font-family: fantasy;
+    font-size: 30px;
+    background-image: url('../img/background.jpg');
+    border-radius: 10px;
+    color: white;
+}
+
+#spiel {
+    margin-left: 20px;
+    font-family: fantasy;
+    font-size: 30px;
+    background-image: url('../img/background.jpg');
+    border-radius: 10px;
+    color: white;
+}
+
+a {
+    color: white;
+}

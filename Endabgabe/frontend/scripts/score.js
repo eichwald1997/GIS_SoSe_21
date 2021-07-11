@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     scoreForm.addEventListener("submit", submitScore);
     let score = localStorage.getItem("score");
     if (score) {
-        scoreElement.innerText = score;
+        scoreElement.innerText = score + " sec";
     }
     else {
         scoreElement.innerText = "Du hast nicht gespielt.";

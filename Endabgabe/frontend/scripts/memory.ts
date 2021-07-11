@@ -102,16 +102,8 @@ namespace L02b {
 
         feld.innerHTML = "";
         handleLoad();
+        setInterval(timer, 1000);
     } 
-
-    let arr = ["Orange", "Apfel"];
-    let arr2 = arr;
-    console.log(arr2); //<- ["Orange", "Apfel"];
-    arr2[0] = "Birne";
-    console.log(arr2);//<- ["Birne", "Apfel"];
-    console.log(arr); //<- ["Birne", "Apfel"]; :(
-
-    
 
     
     function handleLoad(): void {
@@ -162,8 +154,6 @@ namespace L02b {
     }
 
     let zeit: number = 0;
-    setInterval(timer, 1000);
-    
     function timer(): void {
         zeit++;
     }

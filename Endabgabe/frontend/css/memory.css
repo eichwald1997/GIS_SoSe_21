@@ -125,3 +125,20 @@ fieldset {
     margin-left: -2em;
 }
 
+.btt {
+    font-family: fantasy;
+    font-size: 20px;
+    background-image: url('../img/background.jpg');
+    border-radius: 5px;
+    border: 3px solid darkgreen;    
+}
+
+#firstBtt {
+    margin-left: 65%;
+    margin-top: 55px;
+}
+
+a {
+    color: white;
+}
+
