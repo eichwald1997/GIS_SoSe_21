@@ -1,13 +1,13 @@
 body {
-    background-color: black;
+    background-color: rgb(255, 255, 255);
 }
 
 #scoreForm {
     font-family: fantasy;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 table {
     font-family: fantasy;
-    color: white;
+    color: rgb(0, 0, 0);
 }

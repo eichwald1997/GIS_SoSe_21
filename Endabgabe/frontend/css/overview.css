@@ -4,7 +4,7 @@
 
 h1, h2 {
     text-align: center;
-    color: white;
+    color: black;
 }
 h1 {
     font-size: 50px;
@@ -12,7 +12,7 @@ h1 {
 }
 
 body {
-    background-color: black;
+    background-color: white;
 }
 
 #button {
@@ -28,8 +28,8 @@ body {
     margin-top: 25px;
     margin-bottom: 25px;
     height: 100px;
-    background-color: black;
-    border: 5px solid orangered;
+    background-image: url('../img/background.jpg');
+    border: 5px solid darkgreen;
     border-radius: 10px;
     
 }
